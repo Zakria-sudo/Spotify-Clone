@@ -1,11 +1,12 @@
 import React from 'react'
-import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
 const App = () => {
   return (
     <>
     <div className='h-screen bg-black text-white'>
     <Navbar />
+    <Sidebar />
     </div>
     </>
   )
