@@ -3,7 +3,7 @@ import { assets } from '../assets/assets'
 
 const Sidebar = () => {
   return (
-    <div className="sidebar max-w-[28%] h-[80%] p-2 bg-[#121212] rounded">
+    <div className="sidebar max-w-[28%] h-[81%] p-2 bg-[#121212] rounded">
     <div className='flex  items-center justify-between p-4'>
       <h1 className='font-bold'>Your Library</h1>
       <img src={assets.plus_icon} className='w-[20px]' alt="" />
