@@ -2,7 +2,7 @@ import React from 'react'
 import { assets, songsData } from '../assets/assets'
 const Player = () => {
   return (
-    <div className='h-[10%] border border-amber-500 text-white'>
+    <div className='h-[10%] fixed bottom-0 w-full text-white'>
       <div className='flex items-center p-3 gap-4'>
         <img src={songsData[0].image} width={55} alt="" />
         <div className='flex flex-col '>
@@ -26,16 +26,16 @@ const Player = () => {
       
       </div>
       <div className='flex items-center gap-3 '>
-                <img src={assets.play_icon} className='w-[20px] opacity-[75%]' alt="" />
-                <img src={assets.mic_icon} className='w-[20px] opacity-[75%]' alt="" />
-                <img src={assets.queue_icon} className='w-[20px] opacity-[75%]' alt="" />
-                <img src={assets.speaker_icon} className='w-[20px] opacity-[75%]' alt="" />
-                <img src={assets.volume_icon}  className='w-[20px] opacity-[75%]'alt="" />
+                <img src={assets.play_icon} className='w-[15px] opacity-[75%] cursor-pointer' alt="" />
+                <img src={assets.mic_icon} className='w-[15px] opacity-[75%] cursor-pointer' alt="" />
+                <img src={assets.queue_icon} className='w-[15px] opacity-[75%] cursor-pointer' alt="" />
+                <img src={assets.speaker_icon} className='w-[15px] opacity-[75%] cursor-pointer' alt="" />
+                <img src={assets.volume_icon}  className='w-[15px] opacity-[75%] cursor-pointer'alt="" />
                 <div className='w-20 bg-slate-300 h-1 rounded'>
 
                 </div>
-                <img src={assets.mini_player_icon} className='w-[20px] opacity-[75%]' alt="" />
-                <img src={assets.zoom_icon} className='w-[20px] opacity-[75%]' alt="" />
+                <img src={assets.mini_player_icon} className='w-[15px] opacity-[75%] cursor-pointer' alt="" />
+                <img src={assets.zoom_icon} className='w-[15px] opacity-[75%] cursor-pointer' alt="" />
             </div>
       </div>
     </div>
