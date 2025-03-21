@@ -1,13 +1,16 @@
 import React from 'react'
 import { assets } from '../assets/assets'
+import { useNavigate } from 'react-router-dom'
 
 const Main_Nav = () => {
+
+  const navigate = useNavigate()
   return (
     <div>
         <div className='flex justify-between'>
       <div className="btns flex items-center gap-3 ">
-        <img src={assets.arrow_left} width={23} className='cursor-pointer' alt="" />
-        <img src={assets.arrow_right} width={23} className='cursor-pointer' alt="" />
+        <img onClick={()=>navigate(-1)} src={assets.arrow_left} width={23} className='cursor-pointer' alt="" />
+        <img onClick={()=>navigate(1)}src={assets.arrow_right} width={23} className='cursor-pointer' alt="" />
       </div>
         <div className='flex items-center gap-3'>
             <button className='bg-white px-4 py-2 text-black font-bold rounded-full cursor-pointer'>Explore Premium</button>
