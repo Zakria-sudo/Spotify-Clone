@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { assets} from "../assets/assets";
 import {Playercontext} from './context/Playercontext.jsx'
 const Player = () => {
-  const {seekBg, seekBar, playStatus, Play, Pause,track} = useContext(Playercontext)
+  const {seekBg, seekBar, playStatus, Play, Pause, track, time} = useContext(Playercontext)
   return (
     <div className="h-[10%] fixed bottom-0 w-full text-white bg-[#181818] p-2">
       <div className="flex flex-col sm:flex-row items-center justify-between px-4 gap-4">
@@ -21,19 +21,22 @@ const Player = () => {
           <div className="flex gap-3">
             <img src={assets.shuffle_icon} className="w-[15px] sm:w-[20px] cursor-pointer" alt="" />
             <img src={assets.prev_icon} className="w-[15px] sm:w-[20px] cursor-pointer" alt="" />
+
             {playStatus? <img src={assets.pause_icon} onClick={Pause} className="w-[20px] sm:w-[25px] cursor-pointer" alt="" />
             :<img src={assets.play_icon} onClick={Play} className="w-[20px] sm:w-[25px] cursor-pointer" alt="" />}
+
+
             <img src={assets.next_icon} className="w-[15px] sm:w-[20px] cursor-pointer" alt="" />
             <img src={assets.loop_icon} className="w-[15px] sm:w-[20px] cursor-pointer" alt="" />
           </div>
 
           {/* Progress Bar */}
           <div className="flex gap-2 items-center w-full justify-center">
-            <p className="text-xs sm:text-sm">1:23</p>
+            <p className="text-xs sm:text-sm">{time.currentTime.minutes}:{time.currentTime.seconds}</p>
             <div ref={seekBg} className="bg-white w-[40vw] max-[995px]:w-[30vw] sm:w-[60vw] max-w-[300px] sm:max-w-[500px] cursor-pointer relative">
               <div ref={seekBar} className="h-1 w-0 bg-green-700 rounded-full"></div>
             </div>
-            <p className="text-xs sm:text-sm">3:23</p>
+            <p className="text-xs sm:text-sm">{time.totalTime.minutes}:{time.totalTime.seconds}</p>
           </div>
         </div>
 

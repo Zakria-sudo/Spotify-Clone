@@ -1,6 +1,6 @@
 import React from 'react'
 import { createContext } from 'react'
-import { useRef, useState } from 'react';
+import { useRef, useState,useEffect } from 'react';
 import { songsData } from '../../assets/assets';
 
 export const Playercontext = createContext();
@@ -30,6 +30,23 @@ const PlayerContextProvider = (props) => {
       audioRef.current.pause();
       setplayStatus(false)
     }
+    useEffect(() => {
+      setTimeout(() => {
+        audioRef.current.ontimeupdate = () =>{
+          seekBar.current.style.width = `${(audioRef.current.currentTime/audioRef.current.duration)*100}%`;
+         setTime({
+          currentTime:{
+            minutes:Math.floor(audioRef.current.currentTime/60),
+            seconds:Math.floor(audioRef.current.currentTime%60)
+          },
+          totalTime:{
+            minutes:Math.floor(audioRef.current.duration/60),
+            seconds:Math.floor(audioRef.current.duration%60)
+          }
+         })
+        }
+      }, 1000);
+    }, [audioRef])
     
     const contextValue = {
         audioRef,
