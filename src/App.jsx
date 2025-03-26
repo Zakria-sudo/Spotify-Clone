@@ -6,7 +6,7 @@ import Display from './components/Display'
 import { Playercontext } from './components/context/Playercontext'
 
 const App = () => {
-  const {audioRef} =useContext(Playercontext);
+  const {audioRef,track} =useContext(Playercontext);
 
   return (
     <>
@@ -17,7 +17,7 @@ const App = () => {
     <Display />
     </div>
     <Player />
-    <audio preload='auto'></audio>
+    <audio ref={audioRef} src={track.file} preload='auto'></audio>
     </div>
     </>
   )
